@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Cash
+{% endblock %}
+
+{% block main %}
+    <form action="/cash" method="post">
+        <div class="form-group">
+            <select class="form-control" name="credit_card_type" placeholder="Credit Card">
+                <option>Visa</option>
+                <option>American Express</option>
+                <option>Mastercard</option>
+            </select>
+        </div>
+         <div class="form-group">
+            <input class="form-control" name="credit_card_number" placeholder="Credit Card Number" type="text">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="amount" placeholder="Amount" type="number">
+        </div>
+        <button class="btn btn-primary" type="submit">Buy</button>
+    </form>
+{% endblock %}

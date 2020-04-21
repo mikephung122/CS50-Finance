@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    <table class="table" id="quotes">
+        <tr>
+            <th>Name</th>
+            <th>Symbol</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>{{ lookup_response['name'] }}</td>
+            <td>{{ lookup_response['symbol'] }}</td>
+            <td>{{ lookup_response['price'] }}</td>
+        </tr>
+    </table>
+{% endblock %}

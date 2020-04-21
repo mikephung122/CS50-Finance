@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+    <p>
+    Hi {{ user['username'] }}, you currently have a cash balance of ${{ user['cash'] }}. </br>
+    Below is a list of stocks you've transacted and your current holdings:
+    </p>
+
+    <table class="table" id="index">
+         <tr>
+                <th>symbol</th>
+                <th>shares</th>
+                <th>price</th>
+        </tr>
+         {% for stock in stocks %}
+            <tr>
+                <td>{{ stock['symbol'] }}</td>
+                <td>{{ stock['total_shares'] }}</td>
+                <td>{{ stock['price'] }}</td>
+            </tr>
+        {% endfor %}
+            <tr>
+                <td> - </td>
+                <td> - </td>
+                <td> {{ total_networth }}  </td>
+            </tr>
+    </table>
+{% endblock %}

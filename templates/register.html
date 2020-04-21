@@ -1,0 +1,45 @@
+<script>
+
+function duplicate_usernames() {
+    username = document.getElementById('validationcustom01').value
+    response = $.get(url="/check", data={username:username}, succcess=function(response){
+        console.log("Your response was: ")
+        console.log(response)
+        if (response==false){
+            console.log("Duplicate name check passed!")
+            $(':input[type="submit"]').prop('disabled', false)
+            $("#validationcustom01").addClass("is-valid")
+        } else {
+            console.log("Duplicate name check failed!")
+            $(':input[type="submit"]').prop('disabled', true)
+            $("#validationcustom01").addClass("is-invalid")
+        }
+            }
+        )
+    }
+
+</script>
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form class="needs-validation" action="/register" method="post" id="validationform01">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text" id="validationcustom01" onfocusout="duplicate_usernames()">
+                <div class= "invalid-feedback">
+                    Please enter a username that has not been taken.
+                </div>
+            </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password"  id="validationcustom02">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="confirmation" placeholder="Password Confirmation" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit" disabled="true">Register</button>
+    </form>
+{% endblock %}
