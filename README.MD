@@ -4,11 +4,11 @@ This is the final project for CS50's Introduction to Computer Science - An intro
 https://docs.cs50.net/2019/x/psets/8/finance/finance.html#distribution
 
 ## Overview
-Static - Contains CSS styling and any other static resources.
-Templates - HTML templates with Jinja Templating.
-application.py - Flask Application and app routes.
-finance.db - sqlite Database for logging transactions and users.
-helpers.py - Utility functions used by the APIs.
+- Static - Contains CSS styling and any other static resources.
+- Templates - HTML templates with Jinja Templating.
+- application.py - Flask Application and app routes.
+- finance.db - sqlite Database for logging transactions and users.
+- helpers.py - Utility functions used by the APIs.
 
 ## Setup
 - Clone the repository
@@ -16,3 +16,8 @@ helpers.py - Utility functions used by the APIs.
 - export FLASK_APP={directory/application.py}
 - export API_KEY={IEX API Key - https://iexcloud.io/}
 - flask run
+
+## Tools
+- Flask (https://flask.palletsprojects.com/en/1.1.x/)
+- jQuery (https://jquery.com/)
+- Bootstrap (https://getbootstrap.com/)
